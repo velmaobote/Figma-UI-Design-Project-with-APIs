@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NovaLearn • Profile</title>
+    <link rel="icon" href="./assets/logo.svg" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container navbar__inner">
+        <a
+          href="./index.html"
+          style="display: flex; align-items: center; gap: 10px"
+        >
+          <img
+            src="./assets/logo.svg"
+            alt="NovaLearn"
+            width="32"
+            height="32"
+          /><strong style="color: var(--text)">NovaLearn</strong>
+        </a>
+        <button class="nav-toggle" id="navToggle">☰</button>
+        <nav class="navbar__links" id="navLinks">
+          <a href="./index.html">Home</a><a href="./courses.html">Courses</a
+          ><a href="./assignments.html">Assignments</a
+          ><a href="./profile.html">Profile</a>
+          <a id="navLogin" class="btn" href="./login.html">Login</a
+          ><button
+            id="navLogout"
+            class="btn btn-secondary"
+            style="display: none"
+          >
+            Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Public, non-PII profile -->
+    <main class="container stack">
+      <div class="cover"></div>
+      <div class="profile-header">
+        <div class="avatar-lg">Add Photo</div>
+        <div>
+          <h1 style="margin: 0">Your Profile</h1>
+          <p class="hero__subtitle" style="margin: 4px 0 0">
+            Customize your public profile without revealing personal info (no
+            names, contacts).
+          </p>
+          <div class="tabs">
+            <button class="tab active" data-tab="personal">
+              Personal Information
+            </button>
+            <button class="tab" data-tab="education">Education Info</button>
+            <button class="tab" data-tab="work">Work Info</button>
+            <button class="tab" data-tab="demographic">Demographic Info</button>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="copyLink" class="btn btn-secondary">Copy link</button>
+          <button id="editCover" class="icon-btn" title="Change cover">
+            ✎
+          </button>
+        </div>
+      </div>
+
+      <div class="profile-grid">
+        <section class="stack">
+          <div class="card stack" id="aboutCard">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <h2 style="margin: 0">About me</h2>
+              <button id="editAbout" class="icon-btn" title="Edit About me">
+                ✎
+              </button>
+            </div>
+            <p id="aboutText" class="hero__subtitle">
+              You seem like someone interesting… Tell us a little about
+              yourself, your passion, what you live for…
+            </p>
+            <button id="addAboutBtn" class="btn btn-secondary">
+              Add About Me Info
+            </button>
+          </div>
+          <div class="card stack" id="langCard">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <h2 style="margin: 0">Languages</h2>
+              <button id="addLang" class="icon-btn" title="Add language">
+                ＋
+              </button>
+            </div>
+            <div id="langList" class="stack-sm">
+              <p class="hero__subtitle">
+                Add the languages you’re comfortable with.
+              </p>
+            </div>
+          </div>
+          <div class="card stack" id="socialCard">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <h2 style="margin: 0">Social Profiles</h2>
+              <button id="addSocial" class="icon-btn" title="Connect profiles">
+                ＋
+              </button>
+            </div>
+            <div id="socialList" class="grid grid-3"></div>
+          </div>
+          <div class="card stack" id="interestCard">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <h2 style="margin: 0">Interests</h2>
+              <button id="addInterest" class="icon-btn" title="Add interest">
+                ＋
+              </button>
+            </div>
+            <div id="interestList" class="stack-sm">
+              <p class="hero__subtitle">
+                Share non-personal interests to boost visibility.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <aside class="stack">
+          <div class="card stack center">
+            <h3 style="margin: 0">Personal Info</h3>
+            <div id="donut" class="donut" style="--val: 0">
+              <span id="donutVal">0%</span>
+            </div>
+            <p class="hero__subtitle" style="text-align: center">
+              Complete your profile by adding About Me, Languages, Socials, and
+              Interests.
+            </p>
+          </div>
+          <div class="card stack">
+            <h3 style="margin: 0">Checklist</h3>
+            <label
+              ><input type="checkbox" id="chkAbout" disabled /> About Me</label
+            >
+            <label
+              ><input type="checkbox" id="chkLang" disabled /> Languages</label
+            >
+            <label
+              ><input type="checkbox" id="chkSocial" disabled /> Social
+              Profiles</label
+            >
+            <label
+              ><input type="checkbox" id="chkInterest" disabled />
+              Interests</label
+            >
+          </div>
+          <div class="card stack">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <h3 style="margin: 0">Region</h3>
+              <button id="editRegion" class="icon-btn" title="Edit region">
+                ✎
+              </button>
+            </div>
+            <div id="regionText" class="hero__subtitle">
+              Not set — share your general region (e.g., “East Africa”) if you
+              wish. Avoid specific addresses.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/profile.js"></script>
+  </body>
+</html>

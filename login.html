@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NovaLearn • Login</title>
+    <link rel="icon" href="./assets/logo.svg" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container navbar__inner">
+        <a
+          href="./index.html"
+          style="display: flex; align-items: center; gap: 10px"
+        >
+          <img
+            src="./assets/logo.svg"
+            alt="NovaLearn"
+            width="32"
+            height="32"
+          /><strong style="color: var(--text)">NovaLearn</strong>
+        </a>
+        <button class="nav-toggle" id="navToggle">☰</button>
+        <nav class="navbar__links" id="navLinks">
+          <a href="./index.html">Home</a><a href="./courses.html">Courses</a
+          ><a href="./assignments.html">Assignments</a
+          ><a href="./profile.html">Profile</a>
+          <a id="navLogin" class="btn" href="./login.html">Login</a
+          ><button
+            id="navLogout"
+            class="btn btn-secondary"
+            style="display: none"
+          >
+            Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Login form -->
+    <main
+      class="container center"
+      style="min-height: calc(100svh - 64px - 88px)"
+    >
+      <form id="loginForm" class="card stack" style="width: min(520px, 100%)">
+        <div class="stack-sm">
+          <h1>Welcome Back</h1>
+          <p class="hero__subtitle">
+            Use demo creds: <code>eve.holt@reqres.in</code> /
+            <code>cityslicka</code>
+          </p>
+        </div>
+        <label class="label" for="email">Email</label
+        ><input
+          class="input"
+          id="email"
+          type="email"
+          required
+          placeholder="you@example.com"
+        />
+        <label class="label" for="password">Password</label
+        ><input
+          class="input"
+          id="password"
+          type="password"
+          required
+          placeholder="••••••••"
+        />
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <label style="display: inline-flex; align-items: center; gap: 8px"
+            ><input id="remember" type="checkbox" /> Remember me</label
+          >
+          <a href="./forgot.html">Forgot password?</a>
+        </div>
+        <div
+          id="loginError"
+          class="hidden"
+          style="
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #fecaca;
+          "
+        ></div>
+        <button class="btn" type="submit">Login</button>
+        <p class="hero__subtitle">
+          No account? <a href="./signup.html">Sign up</a>
+        </p>
+      </form>
+    </main>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/authreqs.js"></script>
+  </body>
+</html>

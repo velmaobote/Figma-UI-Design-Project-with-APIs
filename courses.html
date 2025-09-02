@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NovaLearn • Courses</title>
+    <link rel="icon" href="./assets/logo.svg" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container navbar__inner">
+        <a
+          href="./index.html"
+          style="display: flex; align-items: center; gap: 10px"
+        >
+          <img
+            src="./assets/logo.svg"
+            alt="NovaLearn"
+            width="32"
+            height="32"
+          /><strong style="color: var(--text)">NovaLearn</strong>
+        </a>
+        <button class="nav-toggle" id="navToggle">☰</button>
+        <nav class="navbar__links" id="navLinks">
+          <a href="./index.html">Home</a><a href="./courses.html">Courses</a
+          ><a href="./assignments.html">Assignments</a
+          ><a href="./profile.html">Profile</a>
+          <a id="navLogin" class="btn" href="./login.html">Login</a
+          ><button
+            id="navLogout"
+            class="btn btn-secondary"
+            style="display: none"
+          >
+            Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Courses list -->
+    <main class="container layout">
+      <aside class="sidebar">
+        <div class="card menu">
+          <a href="./dashboard.html">Home</a><a href="./courses.html">Courses</a
+          ><a href="./assignments.html">Assignments</a
+          ><a href="./profile.html">Profile</a>
+          <button id="logoutBtn2" class="logout">Logout</button>
+        </div>
+      </aside>
+
+      <section class="stack">
+        <h1>Courses</h1>
+        <div
+          class="card"
+          style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap"
+        >
+          <label class="label" for="source" style="margin: 0">Source</label>
+          <select id="source" class="select" style="width: auto">
+            <option value="fakestore">Fake Store</option>
+            <option value="openlib">Open Library</option>
+          </select>
+          <input
+            id="query"
+            class="input"
+            placeholder="Search courses (or Open Library topic)"
+            style="flex: 1; min-width: 220px"
+          />
+        </div>
+        <div id="grid" class="grid grid-3"></div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/coursespage.js"></script>
+  </body>
+</html>
